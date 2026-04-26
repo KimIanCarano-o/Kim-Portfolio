@@ -278,7 +278,13 @@
     grid-template-columns: 1fr;
   }
   .home__right {
-    display: none;
+    display: block;
+    min-height: 320px;
+    margin-top: 3rem;
+  }
+  .home__hero-img {
+    position: relative;
+    min-height: 320px;
   }
   .home__left {
     padding: 7rem 2rem 4rem;
