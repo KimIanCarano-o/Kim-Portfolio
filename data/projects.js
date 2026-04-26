@@ -5,30 +5,33 @@
 export const PROJECTS = [
   {
     id: 1,
-    title: 'Project One',
+    title: 'LorraineKLee.com',
     category: 'Branding / Identity',
     year: '2024',
-    tags: ['Branding'],
+    tags: ['Branding', 'Web'],
     hint: '1920 × 1080 recommended',
-    // imgSrc: '/images/project-one.jpg',
+     imgSrc: '/images/project1.PNG',
+    projectUrl: 'https://lorraineklee.com',
   },
   {
     id: 2,
-    title: 'Project Two',
+    title: 'Memory.sg',
     category: 'Web Design',
     year: '2024',
     tags: ['Web'],
     hint: '1200 × 900',
-    // imgSrc: '/images/project-two.jpg',
+    imgSrc: '/images/project2.PNG',
+    projectUrl: 'https://memory.sg',
   },
   {
     id: 3,
-    title: 'Project Three',
-    category: 'Photography',
+    title: 'Minority Aids Project (MAP)',
+    category: 'Web Design',
     year: '2023',
-    tags: ['Photo'],
+    tags: ['Web'],
     hint: '1600 × 1200',
-    // imgSrc: '/images/project-three.jpg',
+    imgSrc: '/images/project3.PNG',
+    projectUrl: 'https://www.minorityaidsproject.org/',
   },
   {
     id: 4,
@@ -68,4 +71,4 @@ export const PROJECTS = [
   },
 ];
 
-export const FILTER_TAGS = ['All', 'Branding', 'Web', 'Photo', 'Motion'];
+export const FILTER_TAGS = ['All', 'Branding', 'Web',];

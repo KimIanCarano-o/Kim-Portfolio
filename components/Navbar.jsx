@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
         {/* Logo */}
         <Link href="/" className="navbar__logo">
-          Your Name
+          Kim Ian C.
         </Link>
 
         {/* Desktop links */}

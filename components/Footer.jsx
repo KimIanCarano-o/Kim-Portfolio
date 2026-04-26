@@ -10,7 +10,7 @@ export default function Footer() {
       <span className="footer__copy">
         © {year} Your Name. All rights reserved.
       </span>
-      <span className="footer__logo">Your Name</span>
+      <span className="footer__logo">Kim Ian C.</span>
       <Link href="/" className="footer__back">
         Back to top ↑
       </Link>

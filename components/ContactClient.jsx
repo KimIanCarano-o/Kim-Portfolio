@@ -3,11 +3,13 @@
 // components/ContactClient.jsx
 import { useState, useEffect } from 'react';
 
+// Replace YOUR_ID with your Formspree form ID.
+const FORMSPREE_URL = 'https://formspree.io/f/YOUR_ID';
+
 // ✏️ Update your social links here
 const SOCIALS = [
-  { icon: '✉',  label: 'hello@yourname.com',      href: 'mailto:hello@yourname.com' },
-  { icon: 'in', label: 'linkedin.com/in/yourname', href: 'https://linkedin.com/in/yourname' },
-  { icon: '↗',  label: 'github.com/yourname',      href: 'https://github.com/yourname' },
+  { icon: '✉',  label: 'iankimcarabio@gmail.com', href: 'mailto:iankimcarabio@gmail.com' },
+  { icon: 'in', label: 'linkedin.com/in/Kim-Ian-Carano-o', href: 'https://www.linkedin.com/in/kim-ian-carano-o-0357a423b/' },
   { icon: '◉',  label: 'instagram.com/yourname',   href: 'https://instagram.com/yourname' },
 ];
 
@@ -61,26 +63,27 @@ export default function ContactClient() {
 
     setLoading(true);
 
-    /*
-     * ✏️ WIRE UP YOUR BACKEND HERE
-     * Option A — Formspree (free tier):
-     *   const res = await fetch('https://formspree.io/f/YOUR_ID', {
-     *     method: 'POST',
-     *     headers: { 'Content-Type': 'application/json' },
-     *     body: JSON.stringify(fields),
-     *   });
-     *
-     * Option B — EmailJS:
-     *   import emailjs from '@emailjs/browser';
-     *   await emailjs.send('SERVICE_ID', 'TEMPLATE_ID', fields, 'PUBLIC_KEY');
-     *
-     * For now, we simulate a network delay:
-     */
-    await new Promise((r) => setTimeout(r, 1200));
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(fields),
+      });
 
-    setLoading(false);
-    setSuccess(true);
-    setFields(INITIAL);
+      if (!res.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      setSuccess(true);
+      setFields(INITIAL);
+    } catch (err) {
+      setErrors((prev) => ({
+        ...prev,
+        form: 'Sorry, something went wrong. Please try again later.',
+      }));
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -96,9 +99,10 @@ export default function ContactClient() {
         </h1>
 
         <p className="contact__body reveal">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Have a
-          project in mind? I would love to hear about it.
+          Have a project in mind or want to learn more about my work? 
+          Whether you’re looking for web development services, a customized solution 
+          for your business, or simply have a question, I’m here to help. Let’s collaborate 
+          and turn your vision into reality.
         </p>
 
         <nav className="contact__socials reveal">
@@ -120,9 +124,14 @@ export default function ContactClient() {
       {/* ── Right column — Form ──────────── */}
       <div className="contact__right">
         {success ? (
-          <p className="contact__success">
-            ✓ &nbsp;Thank you — I&apos;ll be in touch soon.
-          </p>
+          <div className="contact__success-wrap">
+            <p className="contact__success">
+              ✓ &nbsp;Thank you — I&apos;ve received your message and will review it shortly.
+            </p>
+            <p className="contact__success-sub">
+              I&apos;ll get back to you as soon as possible.
+            </p>
+          </div>
         ) : (
           <form className="contact__form" onSubmit={handleSubmit} noValidate>
             {/* Name */}
@@ -189,6 +198,7 @@ export default function ContactClient() {
             >
               {loading ? 'Sending…' : 'Send Message'}
             </button>
+            {errors.form && <p className="form-error-msg form-error-msg--global">{errors.form}</p>}
           </form>
         )}
       </div>

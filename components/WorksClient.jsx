@@ -75,6 +75,7 @@ export default function WorksClient() {
             imgSrc={project.imgSrc}
             imgAlt={project.title}
             hint={project.hint}
+            projectUrl={project.projectUrl}
           />
         ))}
       </div>

@@ -17,9 +17,9 @@ const ImageIcon = () => (
   </svg>
 );
 
-export default function ProjectCard({ title, category, year, imgSrc, imgAlt, hint }) {
-  return (
-    <article className="project-card reveal">
+export default function ProjectCard({ title, category, year, imgSrc, imgAlt, hint, projectUrl }) {
+  const content = (
+    <>
       <div className="project-card__img-wrap">
         {imgSrc ? (
           // ✏️ Replace: set imgSrc in your projects data
@@ -46,6 +46,14 @@ export default function ProjectCard({ title, category, year, imgSrc, imgAlt, hin
         </div>
         <span className="project-card__year">{year}</span>
       </div>
-    </article>
+    </>
+  );
+
+  return projectUrl ? (
+    <a href={projectUrl} target="_blank" rel="noreferrer" className="project-card reveal">
+      {content}
+    </a>
+  ) : (
+    <article className="project-card reveal">{content}</article>
   );
 }

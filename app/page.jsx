@@ -64,9 +64,12 @@ export default function HomePage() {
           </div>
 
           <p className="home__sub">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua — crafting
-            digital experiences that leave a lasting impression.
+            As a WordPress developer, I combine AI-powered coding with thoughtful 
+            UI design to create modern, efficient, and user-friendly websites. 
+            My approach leverages advanced tools to streamline development, reduce complexity, 
+            and ensure every project meets high standards of performance and usability. 
+            Whether it’s a business site or a custom build, I prioritize clean design, 
+            fast loading speeds, and seamless user interaction.
           </p>
 
           <Link href="/works" className="home__cta">
@@ -102,20 +105,27 @@ export default function HomePage() {
 
         <div className="home__teaser-grid">
           {TEASER_PROJECTS.map((project) => (
-            <Link href="/works" key={project.id} className="home__teaser-item reveal">
-              <div className="home__teaser-img">
-                {project.imgSrc ? (
-                  <Image src={project.imgSrc} alt={project.title} fill style={{ objectFit: 'cover' }} />
-                ) : (
-                  <div className="home__teaser-placeholder">
-                    <ImageIcon />
-                    {project.hint || 'Project image'}
-                  </div>
-                )}
-              </div>
-              <p className="home__teaser-name">{project.title}</p>
-              <p className="home__teaser-cat">{project.category}</p>
-            </Link>
+            <ScrollReveal key={project.id} className="home__teaser-item">
+              <a
+                href={project.projectUrl || '/works'}
+                className="home__teaser-link"
+                target={project.projectUrl ? '_blank' : undefined}
+                rel={project.projectUrl ? 'noreferrer' : undefined}
+              >
+                <div className="home__teaser-img">
+                  {project.imgSrc ? (
+                    <Image src={project.imgSrc} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                  ) : (
+                    <div className="home__teaser-placeholder">
+                      <ImageIcon />
+                      {project.hint || 'Project image'}
+                    </div>
+                  )}
+                </div>
+                <p className="home__teaser-name">{project.title}</p>
+                <p className="home__teaser-cat">{project.category}</p>
+              </a>
+            </ScrollReveal>
           ))}
         </div>
       </section>
