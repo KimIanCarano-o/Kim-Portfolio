@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
+  gap: 4rem;
+  align-items: center;
 }
 
 /* ── Photo column ──────────────────────────────── */
@@ -13,6 +15,7 @@
   position: relative;
   overflow: hidden;
   min-height: 500px;
+  max-height: 80vh;
 }
 
 .about__img-col::before {
