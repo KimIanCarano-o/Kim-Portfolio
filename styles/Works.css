@@ -1,0 +1,192 @@
+/* ─────────────────────────────────────────────────
+   styles/Works.css
+───────────────────────────────────────────────── */
+
+.works {
+  padding: 8rem 4rem 6rem;
+  min-height: 100vh;
+}
+
+/* ── Section header ────────────────────────────── */
+.works__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.works__title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.works__count {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+/* ── Filter tabs ───────────────────────────────── */
+.works__filters {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text);
+}
+
+.filter-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Portfolio grid ────────────────────────────── */
+.works__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+/* Editorial spanning rules */
+.project-card:nth-child(6n + 1) { grid-column: span 7; }
+.project-card:nth-child(6n + 2) { grid-column: span 5; }
+.project-card:nth-child(6n + 3) { grid-column: span 4; }
+.project-card:nth-child(6n + 4) { grid-column: span 4; }
+.project-card:nth-child(6n + 5) { grid-column: span 4; }
+.project-card:nth-child(6n + 0) { grid-column: span 12; }
+
+/* ── Project card ──────────────────────────────── */
+.project-card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.project-card:nth-child(6n + 1) .project-card__img-wrap { aspect-ratio: 16/9; }
+.project-card:nth-child(6n + 0) .project-card__img-wrap { aspect-ratio: 21/7; }
+
+/* real image */
+.project-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.project-card:hover .project-card__img-wrap img {
+  transform: scale(1.04);
+}
+
+/* overlay on hover */
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(201, 169, 110, 0.07);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.project-card:hover .project-card__overlay {
+  opacity: 1;
+}
+
+/* placeholder */
+.project-card__placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: border-color var(--transition);
+}
+
+.project-card__placeholder svg {
+  width: 36px;
+  height: 36px;
+  opacity: 0.25;
+}
+
+.project-card:hover .project-card__placeholder {
+  border-color: var(--accent);
+}
+
+/* meta */
+.project-card__meta {
+  padding: 1rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-card__title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.project-card__cat {
+  font-size: 0.6rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.project-card__year {
+  font-size: 0.6rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 900px) {
+  .works {
+    padding: 6rem 2rem 4rem;
+  }
+  .works__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-card { grid-column: span 1 !important; }
+  .project-card .project-card__img-wrap { aspect-ratio: 4/3 !important; }
+}
+
+@media (max-width: 560px) {
+  .works__grid {
+    grid-template-columns: 1fr;
+  }
+}

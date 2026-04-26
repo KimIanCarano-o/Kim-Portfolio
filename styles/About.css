@@ -1,0 +1,205 @@
+/* ─────────────────────────────────────────────────
+   styles/About.css
+───────────────────────────────────────────────── */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ── Photo column ──────────────────────────────── */
+.about__img-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.about__img-col::before {
+  content: '';
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  width: 80px;
+  height: 80px;
+  border-top: 1px solid var(--accent2);
+  border-left: 1px solid var(--accent2);
+  z-index: 2;
+  opacity: 0.55;
+}
+
+.about__img-col::after {
+  content: '';
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  width: 80px;
+  height: 80px;
+  border-bottom: 1px solid var(--accent2);
+  border-right: 1px solid var(--accent2);
+  z-index: 2;
+  opacity: 0.55;
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: absolute;
+  inset: 0;
+}
+
+.about__photo-placeholder svg {
+  width: 48px;
+  height: 48px;
+  opacity: 0.25;
+}
+
+/* ── Content column ────────────────────────────── */
+.about__content {
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about__intro {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+}
+
+.about__intro em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.about__bio {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 480px;
+  margin-bottom: 3rem;
+}
+
+.about__bio p + p {
+  margin-top: 1rem;
+}
+
+/* ── Skills grid ───────────────────────────────── */
+.about__skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.skill-card {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.skill-card__name {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+.skill-card__desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── Stats row ─────────────────────────────────── */
+.about__stats {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stat__number {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat__label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── CTA ───────────────────────────────────────── */
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  width: fit-content;
+  transition: gap 0.3s;
+}
+
+.about__cta:hover {
+  gap: 1.5rem;
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .about__img-col {
+    min-height: 380px;
+  }
+  .about__content {
+    padding: 4rem 2rem;
+  }
+  .about__stats {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .about__skills {
+    grid-template-columns: 1fr;
+  }
+}
