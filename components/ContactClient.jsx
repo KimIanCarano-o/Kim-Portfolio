@@ -4,11 +4,11 @@
 import { useState, useEffect } from 'react';
 
 // Replace YOUR_ID with your Formspree form ID.
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_ID';
+const FORMSPREE_URL = 'https://formspree.io/f/xnjlrwpy';
 
 // ✏️ Update your social links here
 const SOCIALS = [
-  { icon: '✉',  label: 'iankimcarabio@gmail.com', href: 'mailto:iankimcarabio@gmail.com' },
+  { icon: '✉',  label: 'kimian.dilaab@gmail.com', href: 'mailto:kimian.dilaab@gmail.com' },
   { icon: 'in', label: 'linkedin.com/in/Kim-Ian-Carano-o', href: 'https://www.linkedin.com/in/kim-ian-carano-o-0357a423b/' },
   { icon: '◉',  label: 'instagram.com/yourname',   href: 'https://instagram.com/yourname' },
 ];
