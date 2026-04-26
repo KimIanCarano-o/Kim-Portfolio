@@ -31,6 +31,11 @@ export const metadata = {
   description: 'Creative portfolio & work',
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${montserrat.variable}`}>

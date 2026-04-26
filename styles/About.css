@@ -77,14 +77,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 
 .about__intro {
-  font-family: var(--serif);
+  font-family: var(--montserrat);
   font-size: clamp(1.4rem, 2.5vw, 2.2rem);
   font-weight: 300;
   line-height: 1.4;
   margin-bottom: 2.5rem;
+  color: #ffffff;
 }
 
 .about__intro em {
@@ -93,10 +95,10 @@
 }
 
 .about__bio {
-  font-size: 0.8rem;
-  color: var(--muted);
+  font-size: 1rem;
+  color: #ffffff;
   line-height: 1.9;
-  max-width: 480px;
+  max-width: 680px;
   margin-bottom: 3rem;
 }
 
