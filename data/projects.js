@@ -10,7 +10,7 @@ export const PROJECTS = [
     year: '2024',
     tags: ['Branding', 'Web'],
     hint: '1920 × 1080 recommended',
-     imgSrc: '/images/project1.PNG',
+     imgSrc: '/images/project1.png',
     projectUrl: 'https://lorraineklee.com',
   },
   {
@@ -20,7 +20,7 @@ export const PROJECTS = [
     year: '2024',
     tags: ['Web'],
     hint: '1200 × 900',
-    imgSrc: '/images/project2.PNG',
+    imgSrc: '/images/project2.png',
     projectUrl: 'https://memory.sg',
   },
   {
@@ -30,7 +30,7 @@ export const PROJECTS = [
     year: '2023',
     tags: ['Web'],
     hint: '1600 × 1200',
-    imgSrc: '/images/project3.PNG',
+    imgSrc: '/images/project3.png',
     projectUrl: 'https://www.minorityaidsproject.org/',
   },
   {
