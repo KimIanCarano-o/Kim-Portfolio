@@ -40,7 +40,7 @@
 
 .home__title {
   font-family: var(--font-montserrat), sans-serif;
-  font-size: clamp(3.5rem, 5.5vw, 6rem);
+  font-size: clamp(2.5rem, 5.5vw, 6rem);
   font-weight: 300;
   line-height: 1.05;
   margin-bottom: 2rem;
@@ -89,6 +89,7 @@
 .home__right {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
 }
 
 .home__right::after {
@@ -102,6 +103,7 @@
   border-bottom: 1px solid var(--accent);
   opacity: 0.4;
   pointer-events: none;
+  z-index: 1;
 }
 
 .home__hero-img {
@@ -109,11 +111,11 @@
   inset: 0;
 }
 
-/* actual image style (when you swap in a real <img>) */
 .home__hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .home__hero-placeholder {
@@ -202,6 +204,10 @@
   cursor: pointer;
 }
 
+.home__teaser-link {
+  display: block;
+}
+
 .home__teaser-img {
   aspect-ratio: 4/3;
   position: relative;
@@ -209,7 +215,6 @@
   margin-bottom: 1rem;
 }
 
-/* real image inside teaser */
 .home__teaser-img img {
   width: 100%;
   height: 100%;
@@ -261,53 +266,6 @@
   color: var(--muted);
 }
 
-/* ── Keyframes ─────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50%       { opacity: 1;   transform: scaleY(0.6); }
-}
-
-/* ── Responsive ──────────────────────────────── */
-@media (max-width: 900px) {
-  .home {
-    grid-template-columns: 1fr;
-    row-gap: 3rem;
-  }
-  .home__right {
-    order: -1;
-    display: block;
-    min-height: 320px;
-    margin-top: 0;
-  }
-  .home__left {
-    order: 0;
-    padding: 7rem 2rem 4rem;
-  }
-  .home__hero-img {
-    position: relative;
-    min-height: 320px;
-  }
-  .home__scroll {
-    left: 2rem;
-  }
-  .home__works {
-    padding: 4rem 2rem;
-  }
-  .home__teaser-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .home__teaser-grid {
-    grid-template-columns: 1fr;
-  }
-}
 /* ── Badges bar ────────────────────────────────── */
 .home__badges {
   display: flex;
@@ -317,6 +275,7 @@
   margin-bottom: 2rem;
   border: 1px solid var(--border);
   width: fit-content;
+  max-width: 100%;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s forwards;
 }
@@ -325,7 +284,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1.2rem;
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -341,6 +300,8 @@
 .home__badge-icon {
   color: var(--accent);
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
 }
 
 .home__badge-divider {
@@ -350,13 +311,94 @@
   flex-shrink: 0;
 }
 
+/* ── Keyframes ─────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 1;   transform: scaleY(0.6); }
+}
+
+/* ── Tablet (max 900px) ──────────────────────────── */
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .home__right {
+    order: -1;
+    min-height: 55vw;
+    max-height: 480px;
+    position: relative;
+  }
+
+  .home__hero-img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .home__left {
+    order: 0;
+    padding: 3rem 2rem 4rem;
+  }
+
+  .home__scroll {
+    display: none;
+  }
+
+  .home__works {
+    padding: 4rem 2rem;
+  }
+
+  .home__teaser-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home__badges {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Mobile (max 560px) ──────────────────────────── */
 @media (max-width: 560px) {
+  .home__right {
+    min-height: 70vw;
+    max-height: 360px;
+  }
+
+  .home__left {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .home__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .home__teaser-grid {
+    grid-template-columns: 1fr;
+  }
+
   .home__badges {
     flex-direction: column;
+    align-items: stretch;
     width: 100%;
   }
+
+  .home__badge {
+    justify-content: center;
+  }
+
   .home__badge-divider {
     width: 100%;
     height: 1px;
+  }
+
+  .home__works {
+    padding: 3rem 1.5rem;
   }
 }
