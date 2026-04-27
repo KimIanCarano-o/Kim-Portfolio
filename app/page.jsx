@@ -47,21 +47,31 @@ export default function HomePage() {
           </h1>
 
           <div className="home__badges">
-            <div className="home__badge">
-              <span className="home__badge-icon"><WordPressIcon /></span>
-              WordPress Developer
-            </div>
-            <div className="home__badge-divider" />
-            <div className="home__badge">
-              <span className="home__badge-icon"><UIIcon /></span>
-              UI Designer
-            </div>
-            <div className="home__badge-divider" />
-            <div className="home__badge">
-              <span className="home__badge-icon"><CodeIcon /></span>
-              Vibe Coder
-            </div>
-          </div>
+  <div className="home__badge">
+    <span className="home__badge-icon"><WordPressIcon /></span>
+    WordPress Developer
+  </div>
+  <div className="home__badge-divider" />
+  <div className="home__badge">
+    <span className="home__badge-icon"><UIIcon /></span>
+    UI Designer
+  </div>
+  <div className="home__badge-divider" />
+  <div className="home__badge">
+    <span className="home__badge-icon"><CodeIcon /></span>
+    Vibe Coder
+  </div>
+  <div className="home__badge-divider" />
+  <div className="home__badge">
+    <span className="home__badge-icon">
+      <svg viewBox="0 0 24 24" width={18} height={18} fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+      </svg>
+    </span>
+    Data Entry
+  </div>
+</div>
 
           <p className="home__sub">
             As a WordPress developer, I combine AI-powered coding with thoughtful 
@@ -83,9 +93,10 @@ export default function HomePage() {
               src="/images/Hero Image.png"
               alt="Hero"
               fill
+              sizes="(max-width: 900px) 100vw, 50vw"
               style={{ objectFit: 'cover' }}
               priority
-            />
+/>
           </div>
         </div>
 
@@ -114,7 +125,13 @@ export default function HomePage() {
               >
                 <div className="home__teaser-img">
                   {project.imgSrc ? (
-                    <Image src={project.imgSrc} alt={project.title} fill style={{ objectFit: 'cover' }} />
+                    <Image
+                      src={project.imgSrc}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                    />
                   ) : (
                     <div className="home__teaser-placeholder">
                       <ImageIcon />
