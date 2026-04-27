@@ -77,20 +77,19 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal className="about__bio">
-            <p>
-              I specialize in building modern, high-performance WordPress websites 
-              that are designed to be fast, responsive, and user-focused. My approach 
-              combines AI-assisted development with clean, intuitive UI design, allowing me 
-              to create efficient solutions while maintaining a strong visual experience. By integrating AI into 
-              my workflow, I’m able to streamline development, write optimized code, and deliver projects more 
-              efficiently without compromising quality. 
-            </p>
-            <p>
-              From landing pages to full website builds, I focus on creating 
-              digital experiences that are both functional and visually engaging. I’m passionate about helping 
-              businesses establish a strong online presence through websites that not only look great but also perform 
-              effectively and provide real value to users.
-            </p>
+          <p> I specialize in building modern, high-performance WordPress 
+              websites that are designed to be fast, responsive, and user-focused. 
+              My approach combines AI-assisted development with clean, intuitive UI design, 
+              allowing me to create efficient solutions while maintaining a strong visual experience. 
+              By integrating AI into my workflow, I streamline development, write optimized code,
+              and deliver projects efficiently without compromising quality. </p> <p> In addition to 
+              web development, I also provide reliable data entry and administrative support, ensuring 
+              accuracy, organization, and efficiency in handling large sets of information. I create 
+              visually engaging graphics for social media and business use, helping brands communicate 
+              clearly and maintain a consistent visual identity. </p> <p> From landing pages to full 
+              website builds, I focus on creating digital experiences that are both functional and visually
+              engaging. I’m passionate about helping businesses establish a strong online presence through websites 
+              and content that not only look great but also perform effectively and deliver real value to users. </p>
           </ScrollReveal>
 
           {/* Stats */}

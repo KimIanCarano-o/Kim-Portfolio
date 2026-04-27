@@ -75,11 +75,17 @@ export default function HomePage() {
 
           <p className="home__sub">
             As a WordPress developer, I combine AI-powered coding with thoughtful 
-            UI design to create modern, efficient, and user-friendly websites. 
-            My approach leverages advanced tools to streamline development, reduce complexity, 
-            and ensure every project meets high standards of performance and usability. 
-            Whether it’s a business site or a custom build, I prioritize clean design, 
-            fast loading speeds, and seamless user interaction.
+            UI design to create modern, efficient, and user-friendly websites. My 
+            approach leverages advanced tools to streamline development, reduce 
+            complexity, and ensure every project meets high standards of performance 
+            and usability.
+
+            In addition to development, I also bring experience in data entry and graphic 
+            design, ensuring accurate content management and visually engaging assets that
+            enhance the overall user experience.
+
+            Whether it’s a business site or a custom build, I prioritize clean design, fast 
+            loading speeds, and seamless user interaction.
           </p>
 
           <Link href="/works" className="home__cta">
