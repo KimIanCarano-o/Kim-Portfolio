@@ -43,7 +43,7 @@ export default function HomePage() {
 
           <h1 className="home__title">
             Modern Websites<em>• Creative UI</em><br />
-            &amp; •Development Solutions
+            &amp; Development Solutions
           </h1>
 
           <div className="home__badges">
