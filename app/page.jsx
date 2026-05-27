@@ -42,8 +42,8 @@ export default function HomePage() {
           <p className="home__tag">Available for projects</p>
 
           <h1 className="home__title">
-            Creative<em>Portfolio</em><br />
-            &amp; Work
+            Modern Websites<em>• Creative UI</em><br />
+            &amp; •Development Solutions
           </h1>
 
           <div className="home__badges">
