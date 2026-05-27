@@ -141,32 +141,6 @@
   opacity: 0.25;
 }
 
-/* ── Scroll hint ───────────────────────────────── */
-.home__scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.62rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--muted);
-  opacity: 0;
-  animation: fadeUp 0.8s 0.9s forwards;
-}
-
-.home__scroll-line {
-  display: block;
-  width: 1px;
-  height: 40px;
-  background: var(--muted);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
 /* ── Works teaser strip ────────────────────────── */
 .home__works {
   padding: 5rem 4rem;

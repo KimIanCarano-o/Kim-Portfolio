@@ -35,23 +35,25 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    title: 'Project Four',
-    category: 'UI / UX',
+    title: 'Indonesia Contractors',
+    category: 'Web Design',
     year: '2023',
     tags: ['Web'],
     hint: '1400 × 1050',
-    // imgSrc: '/images/project-four.jpg',
+    imgSrc: '/images/project4.png',
+    projectUrl: 'https://indonesicontractors.com',
   },
-  {
+ {
     id: 5,
-    title: 'Project Five',
-    category: 'Motion',
-    year: '2023',
-    tags: ['Motion'],
+    title: 'Tony Chatman',
+    category: 'Branding / Identity',
+    year: '2024',
+    tags: ['Web', 'Branding'],
     hint: '1920 × 1080',
-    // imgSrc: '/images/project-five.jpg',
+    imgSrc: '/images/project5.png',
+    projectUrl: 'https://tonychatman.com',
   },
-  {
+ /* {
     id: 6,
     title: 'Project Six',
     category: 'Art Direction',
@@ -68,7 +70,7 @@ export const PROJECTS = [
     tags: ['Photo'],
     hint: '1200 × 800',
     // imgSrc: '/images/project-seven.jpg',
-  },
+  }, */
 ];
 
 export const FILTER_TAGS = ['All', 'Branding', 'Web',];

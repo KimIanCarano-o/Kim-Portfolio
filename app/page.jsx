@@ -105,11 +105,6 @@ export default function HomePage() {
 />
           </div>
         </div>
-
-        <div className="home__scroll">
-          <span className="home__scroll-line" />
-          Scroll
-        </div>
       </section>
 
       <section className="home__works">
