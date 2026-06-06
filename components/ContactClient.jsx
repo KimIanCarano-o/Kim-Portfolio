@@ -10,7 +10,7 @@ const FORMSPREE_URL = 'https://formspree.io/f/xnjlrwpy';
 const SOCIALS = [
   { icon: '✉',  label: 'kimian.dilaab@gmail.com', href: 'mailto:kimian.dilaab@gmail.com' },
   { icon: 'in', label: 'linkedin.com/in/Kim-Ian-Carano-o', href: 'https://www.linkedin.com/in/kim-ian-carano-o-0357a423b/' },
-  { icon: '◉',  label: 'instagram.com/yourname',   href: 'https://www.instagram.com/dodongg_ian' },
+  { icon: '◉',  label: 'instagram.com/dodongg_ian',   href: 'https://www.instagram.com/dodongg_ian' },
 ];
 
 const INITIAL = { name: '', email: '', subject: '', message: '' };
