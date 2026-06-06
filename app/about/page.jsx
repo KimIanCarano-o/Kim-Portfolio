@@ -35,8 +35,8 @@ const SKILLS = [
 // ✏️ Edit your stats here
 const STATS = [
   { number: '3+',  label: 'Years experience' },
-  { number: '40+', label: 'Projects delivered' },
-  { number: '20+', label: 'Happy clients' },
+  { number: '30+', label: 'Projects delivered' },
+  { number: '7+', label: 'Happy clients' },
 ];
 
 export const metadata = {
