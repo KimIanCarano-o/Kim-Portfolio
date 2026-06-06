@@ -34,7 +34,7 @@ const SKILLS = [
 
 // ✏️ Edit your stats here
 const STATS = [
-  { number: '5+',  label: 'Years experience' },
+  { number: '3+',  label: 'Years experience' },
   { number: '40+', label: 'Projects delivered' },
   { number: '20+', label: 'Happy clients' },
 ];
@@ -77,8 +77,8 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <ScrollReveal className="about__bio">
-          <p> I specialize in building modern, high-performance WordPress 
-              websites that are designed to be fast, responsive, and user-focused. 
+          <p> I specialize in building modern, high-performance websites
+              that are designed to be fast, responsive, and user-focused. 
               My approach combines AI-assisted development with clean, intuitive UI design, 
               allowing me to create efficient solutions while maintaining a strong visual experience. 
               By integrating AI into my workflow, I streamline development, write optimized code,
