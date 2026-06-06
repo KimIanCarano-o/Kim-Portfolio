@@ -1,5 +1,4 @@
 // components/Footer.jsx  — Server Component
-import Link from 'next/link';
 import '../styles/Footer.css';
 
 export default function Footer() {
@@ -11,9 +10,9 @@ export default function Footer() {
         © {year} Your Name. All rights reserved.
       </span>
       <span className="footer__logo">Kim Ian C.</span>
-      <Link href="/" className="footer__back">
+      <a href="#top" className="footer__back">
         Back to top ↑
-      </Link>
+      </a>
     </footer>
   );
 }

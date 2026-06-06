@@ -40,6 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${montserrat.variable}`}>
       <body>
+        <div id="top" />
         <SmokeBackground />
         <Navbar />
         {children}
